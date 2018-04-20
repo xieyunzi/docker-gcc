@@ -1,0 +1,13 @@
+version: '2'
+services:
+  gcc:
+    build: .
+    image: xieyunzi/gcc
+    volumes:
+      - "$PWD/data:/data"
+    working_dir: /data
+    stdin_open: true
+    tty: true
+    command: bash
+    cap_add:
+      - SYS_PTRACE
